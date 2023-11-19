@@ -46,20 +46,21 @@ public class Maps extends AppCompatActivity {
     private LocationRequest locationRequest;
     private LocationCallback locationCallback;
     Marker MiMarker;
-    private static final float MAX_ACCEPTABLE_ACCURACY = 1000.0f;
+    private static final float MAX_ACCEPTABLE_ACCURACY = 10.0f;
     TextView coords;
     Switch swCentrar;
     private IMapController Imap;
 
 
+    /** @noinspection deprecation*/
     @SuppressLint("VisibleForTests")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
-        coords = (TextView) findViewById(R.id.coords);
+        coords = findViewById(R.id.coords);
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
-        swCentrar = (Switch) findViewById(R.id.switch1);
+        swCentrar = findViewById(R.id.switch1);
 
         fusedLocationClient = new FusedLocationProviderClient(this);
         locationRequest = new LocationRequest();
@@ -123,6 +124,7 @@ public class Maps extends AppCompatActivity {
         fusedLocationClient.removeLocationUpdates(locationCallback);
     }
 
+    @SuppressLint("SetTextI18n")
     private void updateUI(double latitude, double longitude) {
         coords.setText("lotitud: "+latitude+" longitud: "+ longitude);
         mapView.getOverlays().remove(MiMarker);

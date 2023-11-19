@@ -2,6 +2,7 @@ package com.mgajardo.SoSelf;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +16,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FormFeel extends AppCompatActivity {
+    Intent intent = getIntent();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -147,7 +150,7 @@ public class FormFeel extends AppCompatActivity {
                     case MotionEvent.ACTION_UP:
 
                         volverbtn.setImageResource(R.drawable.volver_static);
-                        startActivity(new Intent(FormFeel.this, MainActivity.class));
+                        MandarDatosYCambiarActivity(intent,new Intent(FormFeel.this, Inicio.class));
                         return true;
 
                     default:
@@ -179,4 +182,13 @@ public class FormFeel extends AppCompatActivity {
             }
         });
     }
+    public void MandarDatosYCambiarActivity(Intent intent, Intent EsteIntent){
+        intent = getIntent();
+        EsteIntent.putExtra("name", intent.getStringExtra("nombre"));
+        EsteIntent.putExtra("name", intent.getStringExtra("email"));
+        EsteIntent.putExtra("name", intent.getStringExtra("phone"));
+        EsteIntent.putExtra("name", intent.getStringExtra("pass"));
+        startActivity(EsteIntent);
+    }
+
 }

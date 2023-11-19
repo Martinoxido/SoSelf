@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "21016539011",
+    "project_id": "soself",
+    "storage_bucket": "soself.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:21016539011:android:25e9f17018579a88e910b6",
+        "android_client_info": {
+          "package_name": "com.mgajardo.SoSelf"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA10edPpQeIH4Fa_q_o4Lj3uKEytOFEksc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
