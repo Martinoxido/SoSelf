@@ -77,11 +77,8 @@ public class MainActivity extends AppCompatActivity {
 
 
                         if(txtPass.getText().toString().equals(user.getPass().toString())){
+                            Log.d("INICIOSesion","email "+ user.getEmail());
                             intent.putExtra("email", user.getEmail().toString());
-                            intent.putExtra("name", user.getName().toString());
-                            intent.putExtra("phone", user.getPhone().toString());
-                            intent.putExtra("pass", user.getPass().toString());
-
                             startActivity(intent);
                         }else{
                             Log.d("TAG", "Contra MALA ");

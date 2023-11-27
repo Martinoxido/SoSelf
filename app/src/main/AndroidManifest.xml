@@ -19,6 +19,12 @@
         android:theme="@style/Theme.SoSelf"
         tools:targetApi="31">
         <activity
+            android:name=".ConfBorrar"
+            android:exported="false" />
+        <activity
+            android:name=".ModPerfil"
+            android:exported="false" />
+        <activity
             android:name=".Perfil"
             android:exported="false" />
         <activity
